@@ -26,8 +26,8 @@ struct termios myterm;
 
 tcgetattr(STDIN_FILENO, &myterm);
 
-//myterm.c_lflag = myterm.c_lflag | (ECHO);
-myterm.c_cc[VINTR]=1;
+myterm.c_lflag = myterm.c_lflag | (ECHO);
+
 tcsetattr(STDIN_FILENO, TCSANOW, &myterm);
 
 }
